@@ -9,6 +9,10 @@ class RomanNumeralConverterTest(unittest.TestCase):
         result = converter.to_arabic('I')
         self.assertEquals(1, result)
 
+    def test_II_to_arabic_equals_2(self):
+        converter = RomanNumeralConverter()
+        result = converter.to_arabic('II')
+        self.assertEquals(2, result)
 
 if __name__ == '__main__':
     unittest.main()
