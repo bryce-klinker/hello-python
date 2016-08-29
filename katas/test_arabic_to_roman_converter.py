@@ -16,5 +16,9 @@ class ArabicToRomanConverterTest(unittest.TestCase):
         result = arabic_to_roman(3)
         self.assertEquals('III', result)
 
+    def test_4_to_roman_equals_IV(self):
+        result = arabic_to_roman(4)
+        self.assertEquals('IV', result)
+
 if __name__ == '__main__':
     unittest.main()
