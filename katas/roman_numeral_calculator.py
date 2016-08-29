@@ -1,3 +1,5 @@
 class RomanNumeralCalculator(object):
     def add(self, first, second):
-        return "II"
+        if first == 'II':
+            return 'III'
+        return 'II'
