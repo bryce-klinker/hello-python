@@ -1,19 +1,27 @@
+map = {
+    "I": 1,
+    "IV": 4,
+    "V": 5,
+    "IX": 9,
+    "X": 10
+}
+
 def roman_to_arabic(roman):
-    if roman == 'X':
-        return 10
+    value = 0
+    index = 0
+    length = len(roman)
+    while index < length:
+        first = roman[index]
+        second = ''
+        if index < length - 1:
+            second = roman[index + 1]
 
-    if roman == 'IX':
-        return 9
+        if first + second in map.keys():
+            value += map[first + second]
+            index += 1
+        else:
+            value += map[first]
 
-    if roman == 'V':
-        return 5
+        index += 1
 
-    if roman == 'IV':
-        return 4
-
-    if roman == 'III':
-        return 3
-
-    if roman == 'II':
-        return 2
-    return 1
+    return value
