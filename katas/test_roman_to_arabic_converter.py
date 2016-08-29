@@ -19,6 +19,10 @@ class RomanToArabicConverterTest(unittest.TestCase):
         result = roman_to_arabic('IV')
         self.assertEquals(4, result)
 
+    def test_V_to_arabic_equals_5(self):
+        result = roman_to_arabic('V')
+        self.assertEquals(5, result)
+
     def test_IX_to_arabic_equals_9(self):
         result = roman_to_arabic('IX')
         self.assertEquals(9, result)
