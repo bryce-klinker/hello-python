@@ -1,9 +1,9 @@
 import unittest
 
-from katas.roman_numeral_converter import RomanNumeralConverter
+from katas.arabic_to_roman_converter import RomanNumeralConverter
 
 
-class RomanNumeralConverterTest(unittest.TestCase):
+class ArabicToRomanConverterTest(unittest.TestCase):
     def setUp(self):
         self.converter = RomanNumeralConverter()
 
