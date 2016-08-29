@@ -24,6 +24,5 @@ class ArabicToRomanConverterTest(unittest.TestCase):
         result = arabic_to_roman(5)
         self.assertEquals('V', result)
 
-
 if __name__ == '__main__':
     unittest.main()

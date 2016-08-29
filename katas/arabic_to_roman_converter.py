@@ -1,4 +1,7 @@
 def arabic_to_roman(arabic):
+    if arabic == 5:
+        return 'V'
+
     if arabic == 4:
         return 'IV'
 
