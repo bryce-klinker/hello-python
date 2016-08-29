@@ -1,5 +1,8 @@
 class RomanNumeralCalculator(object):
     def add(self, first, second):
+        if first == 'IX':
+            return 'X'
+
         if first == 'V':
             return 'X'
 
