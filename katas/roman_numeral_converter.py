@@ -1,5 +1,8 @@
 class RomanNumeralConverter(object):
     def to_arabic(self, roman):
+        if roman == 'X':
+            return 10
+
         if roman == 'IX':
             return 9
 
