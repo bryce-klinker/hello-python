@@ -17,6 +17,6 @@ class RomanNumeralConverter(object):
         return 1
 
     def to_roman(self, arabic):
-        if  arabic == 2:
+        if arabic == 2:
             return 'II'
         return 'I'
