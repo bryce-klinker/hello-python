@@ -1,17 +1,9 @@
+from katas.roman_to_arabic_converter import roman_to_arabic
+from katas.arabic_to_roman_converter import arabic_to_roman
+
 class RomanNumeralCalculator(object):
     def add(self, first, second):
-        if first == 'IX':
-            return 'X'
-
-        if first == 'V':
-            return 'X'
-
-        if first == 'IV' or second == 'IV':
-            return 'V'
-
-        if first == 'II' and second == 'II':
-            return 'IV'
-
-        if first == 'II' or second == 'II':
-            return 'III'
-        return 'II'
+        first_arabic = roman_to_arabic(first)
+        second_arabic = roman_to_arabic(second)
+        arabic_result = first_arabic + second_arabic
+        return arabic_to_roman(arabic_result)
