@@ -1,4 +1,4 @@
-def to_arabic(roman):
+def roman_to_arabic(roman):
     if roman == 'X':
         return 10
 
