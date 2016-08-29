@@ -22,5 +22,9 @@ class RomanNumeralCalculatorTest(unittest.TestCase):
         result = self.calculator.add('II', 'II')
         self.assertEquals('IV', result)
 
+    def test_IV_plus_I_equals_V(self):
+        result = self.calculator.add('IV', 'I')
+        self.assertEquals('V', result)
+
 if __name__ == '__main__':
     unittest.main()
