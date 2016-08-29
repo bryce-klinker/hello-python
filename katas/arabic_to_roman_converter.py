@@ -1,4 +1,7 @@
 def arabic_to_roman(arabic):
+    if arabic == 10:
+        return 'X'
+
     if arabic == 9:
         return 'IX'
 
