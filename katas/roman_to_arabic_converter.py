@@ -1,4 +1,4 @@
-map = {
+roman_to_arabic_map = {
     "I": 1,
     "IV": 4,
     "V": 5,
@@ -17,11 +17,11 @@ def roman_to_arabic(roman):
         if index < length - 1:
             second = roman[index + 1]
 
-        if first + second in map.keys():
-            value += map[first + second]
+        if first + second in roman_to_arabic_map.keys():
+            value += roman_to_arabic_map[first + second]
             index += 1
         else:
-            value += map[first]
+            value += roman_to_arabic_map[first]
 
         index += 1
 
