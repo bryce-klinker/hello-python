@@ -1,6 +1,5 @@
 import unittest
 
-from katas.arabic_to_roman_converter import arabic_to_roman
 from katas.roman_numeral import RomanNumeral
 
 
@@ -32,6 +31,14 @@ class ArabicToRomanConverterTest(unittest.TestCase):
     def test_10_to_roman_equals_X(self):
         result = RomanNumeral.from_arabic(10)
         self.assertEquals('X', result.roman)
+
+    def test_20_to_roman_equals_XX(self):
+        result = RomanNumeral.from_arabic(20)
+        self.assertEquals('XX', result.roman)
+
+    def test_40_to_roman_equals_XL(self):
+        result = RomanNumeral.from_arabic(40)
+        self.assertEquals("XL", result.roman)
 
 if __name__ == '__main__':
     unittest.main()
