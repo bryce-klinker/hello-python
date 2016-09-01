@@ -1,3 +1,6 @@
+import operator
+
+
 class RomanNumeral:
 
     def __init__(self, roman):
@@ -31,7 +34,7 @@ class RomanNumeral:
         roman = ""
         remainder = arabic
         while remainder > 0:
-            for key, value in sorted(roman_to_arabic_map.items(), reverse=True):
+            for key, value in sorted(roman_to_arabic_map.items(), key=operator.itemgetter(1), reverse=True):
                 if remainder >= value:
                     remainder -= value
                     roman += key
