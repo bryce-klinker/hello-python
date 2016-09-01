@@ -37,6 +37,9 @@ class RomanToArabicConverterTest(unittest.TestCase):
     def test_CD_to_arabic_equals_400(self):
         self.assert_roman_to_arabic("CD", 400)
 
+    def test_D_to_arabic_equals_500(self):
+        self.assert_roman_to_arabic("D", 500)
+
     def assert_roman_to_arabic(self, roman, arabic):
         result = RomanNumeral.from_roman(roman)
         self.assertEquals(arabic, result.arabic)
