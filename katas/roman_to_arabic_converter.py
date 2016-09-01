@@ -6,6 +6,7 @@ map = {
     "X": 10
 }
 
+
 def roman_to_arabic(roman):
     value = 0
     index = 0
