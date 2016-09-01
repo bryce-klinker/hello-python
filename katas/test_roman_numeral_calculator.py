@@ -30,6 +30,9 @@ class RomanNumeralCalculatorTest(unittest.TestCase):
     def test_IX_plus_I_equals_X(self):
         self.assert_add_equals("IX", "I", "X")
 
+    def test_X_plus_XXX_equals_XL(self):
+        self.assert_add_equals("X", "XXX", "XL")
+
     def assert_add_equals(self, first, second, expected):
         actual = self.calculator.add(first, second)
         self.assertEquals(expected, actual)
