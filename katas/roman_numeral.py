@@ -2,7 +2,6 @@ import operator
 
 
 class RomanNumeral:
-
     def __init__(self, roman):
         self._roman = roman
 
@@ -16,6 +15,10 @@ class RomanNumeral:
 
     def add(self, roman_numeral):
         arabic_sum = self.arabic + roman_numeral.arabic
+        if arabic_sum > 3999:
+            raise RuntimeError(
+                "Sum of " + self.roman + " and " + roman_numeral.roman + " results in an invalid roman numeral")
+
         return RomanNumeral.from_arabic(arabic_sum)
 
     @staticmethod
