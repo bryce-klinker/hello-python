@@ -31,7 +31,8 @@ class RomanNumeral:
             "XC": 90,
             "C": 100,
             "CD": 400,
-            "D": 500
+            "D": 500,
+            "M": 1000
         }
 
     @staticmethod
