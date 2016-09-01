@@ -32,16 +32,7 @@ class RomanNumeral:
 
     @staticmethod
     def from_arabic(arabic):
-        roman_to_arabic_map = RomanNumeral.get_map()
-        roman = ""
-        remainder = arabic
-        while remainder > 0:
-            for key, value in sorted(roman_to_arabic_map.items(), key=operator.itemgetter(1), reverse=True):
-                if remainder >= value:
-                    remainder -= value
-                    roman += key
-                    break
-
+        roman = RomanNumeral.convert_to_roman(arabic)
         return RomanNumeral(roman)
 
     @staticmethod
@@ -69,3 +60,17 @@ class RomanNumeral:
             index += 1
 
         return value
+
+    @staticmethod
+    def convert_to_roman(arabic):
+        roman_to_arabic_map = RomanNumeral.get_map()
+        roman = ""
+        remainder = arabic
+        while remainder > 0:
+            for key, value in sorted(roman_to_arabic_map.items(), key=operator.itemgetter(1), reverse=True):
+                if remainder >= value:
+                    remainder -= value
+                    roman += key
+                    break
+
+        return roman
