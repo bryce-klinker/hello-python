@@ -40,6 +40,9 @@ class RomanToArabicConverterTest(unittest.TestCase):
     def test_D_to_arabic_equals_500(self):
         self.assert_roman_to_arabic("D", 500)
 
+    def test_M_to_arabic_equals_1000(self):
+        self.assert_roman_to_arabic("M", 1000)
+
     def assert_roman_to_arabic(self, roman, arabic):
         result = RomanNumeral.from_roman(roman)
         self.assertEquals(arabic, result.arabic)
