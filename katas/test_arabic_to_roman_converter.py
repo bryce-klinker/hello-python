@@ -40,5 +40,9 @@ class ArabicToRomanConverterTest(unittest.TestCase):
         result = RomanNumeral.from_arabic(40)
         self.assertEquals("XL", result.roman)
 
+    def test_50_to_roman_equals_L(self):
+        result = RomanNumeral.from_arabic(50)
+        self.assertEquals("L", result.roman)
+
 if __name__ == '__main__':
     unittest.main()
