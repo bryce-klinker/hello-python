@@ -51,6 +51,10 @@ class RomanToArabicConverterTest(unittest.TestCase):
     def test_MMMM_to_arabic_raises_error(self):
         RomanNumeral.from_roman("MMMM")
 
+    @raises(RuntimeError)
+    def test_IIII_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("IIII")
+
     def assert_roman_to_arabic(self, roman, arabic):
         result = RomanNumeral.from_roman(roman)
         self.assertEquals(arabic, result.arabic)
