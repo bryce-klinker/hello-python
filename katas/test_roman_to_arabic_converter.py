@@ -1,4 +1,5 @@
 import unittest
+from nose.tools import *
 
 from katas.roman_numeral import RomanNumeral
 
@@ -45,6 +46,10 @@ class RomanToArabicConverterTest(unittest.TestCase):
 
     def test_M_to_arabic_equals_1000(self):
         self.assert_roman_to_arabic("M", 1000)
+
+    @raises(RuntimeError)
+    def test_MMMM_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("MMMM")
 
     def assert_roman_to_arabic(self, roman, arabic):
         result = RomanNumeral.from_roman(roman)

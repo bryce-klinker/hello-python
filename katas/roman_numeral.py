@@ -3,6 +3,9 @@ import operator
 
 class RomanNumeral:
     def __init__(self, roman):
+        if roman == "MMMM":
+            raise RuntimeError("The roman numeral MMMM is not valid")
+
         self._roman = roman
 
     @property
