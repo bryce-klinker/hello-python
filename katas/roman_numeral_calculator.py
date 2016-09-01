@@ -1,10 +1,9 @@
-from katas.roman_to_arabic_converter import roman_to_arabic
-from katas.arabic_to_roman_converter import arabic_to_roman
+from roman_numeral import RomanNumeral
 
 
 class RomanNumeralCalculator(object):
     def add(self, first, second):
-        first_arabic = roman_to_arabic(first)
-        second_arabic = roman_to_arabic(second)
-        arabic_result = first_arabic + second_arabic
-        return arabic_to_roman(arabic_result)
+        first_roman_numeral = RomanNumeral(first)
+        second_roman_numeral = RomanNumeral(second)
+        sum_roman_numeral = first_roman_numeral.add(second_roman_numeral)
+        return sum_roman_numeral.roman
