@@ -48,6 +48,9 @@ class RomanNumeralCalculatorTest(unittest.TestCase):
     def test_CCC_plus_CC_equals_D(self):
         self.assert_add_equals("CCC", "CC", "D")
 
+    def test_D_plus_D_equals_M(self):
+        self.assert_add_equals("D", "D", "M")
+
     def assert_add_equals(self, first, second, expected):
         actual = self.calculator.add(first, second)
         self.assertEquals(expected, actual)
