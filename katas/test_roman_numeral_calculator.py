@@ -33,6 +33,3 @@ class RomanNumeralCalculatorTest(unittest.TestCase):
     def assert_add_equals(self, first, second, expected):
         actual = self.calculator.add(first, second)
         self.assertEquals(expected, actual)
-
-if __name__ == '__main__':
-    unittest.main()
