@@ -53,7 +53,7 @@ class RomanNumeral:
         roman = ""
         remainder = arabic
         while remainder > 0:
-            for key, roman_map in sorted(all_roman_maps.items(), key=lambda r_map: r_map[1].arabic, reverse=True):
+            for key, roman_map in RomanNumeral.get_sorted_descending_maps():
                 if remainder >= roman_map.arabic:
                     remainder -= roman_map.arabic
                     roman += roman_map.symbol
@@ -96,3 +96,7 @@ class RomanNumeral:
             index += 1
 
         return roman_maps
+
+    @staticmethod
+    def get_sorted_descending_maps():
+        return sorted(all_roman_maps.items(), key=lambda r_map: r_map[1].arabic, reverse=True)
