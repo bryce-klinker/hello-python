@@ -1,4 +1,4 @@
-from katas.roman_map import Roman_Map
+from katas.roman_map import all_roman_maps
 
 
 class RomanNumeral:
@@ -25,24 +25,6 @@ class RomanNumeral:
         return RomanNumeral.from_arabic(arabic_sum)
 
     @staticmethod
-    def get_maps():
-        return {
-            "I": Roman_Map("I", 1, 3),
-            "IV": Roman_Map("IV", 4, 1),
-            "V": Roman_Map("V", 5, 1),
-            "IX": Roman_Map("IX", 9, 1),
-            "X": Roman_Map("X", 10, 3),
-            "XL": Roman_Map("XL", 40, 1),
-            "L": Roman_Map("L", 50, 1),
-            "XC": Roman_Map("XC", 90, 1),
-            "C": Roman_Map("C", 100, 3),
-            "CD": Roman_Map("CD", 400, 1),
-            "D": Roman_Map("D", 500, 1),
-            "CM": Roman_Map("CM", 900, 1),
-            "M": Roman_Map("M", 1000, 3)
-        }
-
-    @staticmethod
     def from_arabic(arabic):
         roman = RomanNumeral.convert_to_roman(arabic)
         return RomanNumeral(roman)
@@ -58,11 +40,10 @@ class RomanNumeral:
 
     @staticmethod
     def convert_to_roman(arabic):
-        roman_to_arabic_map = RomanNumeral.get_maps()
         roman = ""
         remainder = arabic
         while remainder > 0:
-            for key, roman_map in sorted(roman_to_arabic_map.items(), key=lambda(k, v): roman_to_arabic_map[k].arabic, reverse=True):
+            for key, roman_map in sorted(all_roman_maps.items(), key=lambda(k, v): all_roman_maps[k].arabic, reverse=True):
                 if remainder >= roman_map.arabic:
                     remainder -= roman_map.arabic
                     roman += roman_map.symbol
@@ -87,8 +68,7 @@ class RomanNumeral:
 
     @staticmethod
     def get_maps_in_roman(roman):
-        roman_to_arabic_map = RomanNumeral.get_maps()
-        maps = []
+        roman_maps = []
         index = 0
         length = len(roman)
         while index < length:
@@ -97,14 +77,14 @@ class RomanNumeral:
             if index < length - 1:
                 second = roman[index + 1]
 
-            if first + second in roman_to_arabic_map.keys():
-                maps.append(roman_to_arabic_map[first + second])
+            if first + second in all_roman_maps.keys():
+                roman_maps.append(all_roman_maps[first + second])
                 index += 1
             else:
-                maps.append(roman_to_arabic_map[first])
+                roman_maps.append(all_roman_maps[first])
 
             index += 1
 
-        return maps;
+        return roman_maps
 
 
