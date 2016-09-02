@@ -19,6 +19,12 @@ def step_impl(context, club_count):
 
 @then("I should have clubs")
 def step_impl(context):
-    club_names = [club.club_name for club in context.clubs]
+    club_names = [club.name for club in context.clubs]
     for row in context.table:
         assert row['club_name'] in club_names
+
+
+@then("I should get (.\d+) matches for each club")
+def step_impl(context, match_count):
+    for club in context.clubs:
+        assert len(club.matches) is int(match_count)

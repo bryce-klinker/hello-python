@@ -54,3 +54,7 @@ Feature: Clubs
       | Tottenham      |
       | Man City       |
       | West Brom      |
+
+  Scenario: Get Matches For Club
+    When I get clubs in the Premier League for 2015-2016
+    Then I should get 38 matches for each club

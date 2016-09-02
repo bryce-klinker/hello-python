@@ -15,6 +15,6 @@ class ClubGatewayTest(unittest.TestCase):
 
     def test_get_all_clubs_includes_club_name(self):
         clubs = self.gateway.get_all()
-        self.assertEquals("Arsenal", clubs[0].club_name)
-        self.assertEquals("Aston Villa", clubs[1].club_name)
-        self.assertEquals("Bournemouth", clubs[2].club_name)
+        self.assertEquals("Arsenal", clubs[0].name)
+        self.assertEquals("Aston Villa", clubs[1].name)
+        self.assertEquals("Bournemouth", clubs[2].name)
