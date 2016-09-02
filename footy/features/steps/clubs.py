@@ -1,4 +1,6 @@
 from behave import *
+from footy.src.clubs.club_gateway import ClubGateway
+
 
 use_step_matcher("re")
 
@@ -10,7 +12,7 @@ def step_impl(context, league, start_year, end_year):
 
 @when("I get clubs in the (.*) for (.\d+)-(.\d+)")
 def step_impl(context, league, start_year, end_year):
-    context.clubs = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    context.clubs = ClubGateway().get_all()
 
 
 @then("I should have (.\d+) clubs")
