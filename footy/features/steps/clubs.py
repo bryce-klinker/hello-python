@@ -16,3 +16,10 @@ def step_impl(context, league, start_year, end_year):
 @then("I should have (.\d+) clubs")
 def step_impl(context, club_count):
     assert len(context.clubs) is int(club_count)
+
+
+@then("I should have clubs")
+def step_impl(context):
+    club_names = [club.club_name for club in context.clubs]
+    for row in context.table:
+        assert row['club_name'] in club_names
