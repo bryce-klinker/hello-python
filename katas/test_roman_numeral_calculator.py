@@ -74,6 +74,10 @@ class RomanNumeralCalculatorTest(unittest.TestCase):
         self.assert_minus_equals("M", "C", "CM")
 
     @raises(RuntimeError)
+    def test_L_minus_L_raises_error(self):
+        self.calculator.subtract("L", "L")
+
+    @raises(RuntimeError)
     def test_C_minus_M_raises_error(self):
         self.calculator.subtract("C", "M")
 
