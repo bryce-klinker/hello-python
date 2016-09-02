@@ -1,5 +1,5 @@
 from os import listdir, path
-from itertools import groupby
+from itertools import groupby, islice
 
 from footy.src.leagues.league import League
 
@@ -19,6 +19,6 @@ class LeagueGateway:
     @staticmethod
     def get_league_name(csv_path):
         file_name = path.basename(csv_path)
-        parts = file_name.split("_")
-        league_part = parts[2].split(".")[0]
-        return league_part.replace("_", " ")
+        parts = islice(file_name.split("_"), 2, None)
+        league_name_with_extension = " ".join(parts)
+        return league_name_with_extension.split(".")[0]

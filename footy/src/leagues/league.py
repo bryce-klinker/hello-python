@@ -1,4 +1,3 @@
 class League:
-    def __init__(self, file, csv_paths):
-        print(file)
-        print(csv_paths)
+    def __init__(self, league_name, csv_paths):
+        self.name = league_name
