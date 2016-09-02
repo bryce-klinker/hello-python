@@ -58,6 +58,9 @@ class RomanNumeralCalculatorTest(unittest.TestCase):
     def test_II_minus_I_equals_I(self):
         self.assert_minus_equals("II", "I", "I")
 
+    def test_V_minus_I_equals_IV(self):
+        self.assert_minus_equals("V", "I", "IV")
+
     @raises(RuntimeError)
     def test_MMM_plus_M_throws_runtime_error(self):
         self.calculator.add("MMM", "M")
