@@ -47,6 +47,9 @@ class RomanToArabicConverterTest(unittest.TestCase):
     def test_M_to_arabic_equals_1000(self):
         self.assert_roman_to_arabic("M", 1000)
 
+    def test_MMMCMXCIX_to_arabic_equals_3999(self):
+        self.assert_roman_to_arabic("MMMCMXCIX", 3999)
+
     @raises(RuntimeError)
     def test_IIII_to_arabic_raises_error(self):
         RomanNumeral.from_roman("IIII")

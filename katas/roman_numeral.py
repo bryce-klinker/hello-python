@@ -1,6 +1,9 @@
 from katas.roman_map import all_roman_maps
 
 
+MAX_ARABIC_VALUE = 3999
+
+
 class RomanNumeral:
     @property
     def roman(self):
@@ -18,7 +21,7 @@ class RomanNumeral:
 
     def add(self, roman_numeral):
         arabic_sum = self.arabic + roman_numeral.arabic
-        if arabic_sum > 3999:
+        if arabic_sum > MAX_ARABIC_VALUE:
             raise RuntimeError(
                 "Sum of " + self.roman + " and " + roman_numeral.roman + " results in an invalid roman numeral")
 
