@@ -16,4 +16,4 @@ def step_impl(context):
     for row in context.table:
         league = [league for league in context.leagues if league.name == row['league_name']][0]
         season = [season for season in league.seasons if season.start_year == int(row['start_year'])][0]
-        assert season.end_year is int(row['end_year'])
+        assert season.end_year == int(row['end_year'])
