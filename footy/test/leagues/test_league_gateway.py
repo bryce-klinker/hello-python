@@ -5,13 +5,20 @@ from footy.test_data.test_data_paths import seasons_path
 
 
 class LeagueGatewayTest(unittest.TestCase):
+    def setUp(self):
+        self.gateway = LeagueGateway(seasons_path)
+
     def test_get_all_leagues_should_get_leagues_from_seasons(self):
-        gateway = LeagueGateway(seasons_path)
-        leagues = gateway.get_all()
+        leagues = self.gateway.get_all()
         self.assertEquals(2, len(leagues))
 
     def test_get_all_gets_pretty_league_names(self):
-        gateway = LeagueGateway(seasons_path)
-        league_names = [league.name for league in gateway.get_all()]
+        league_names = [league.name for league in self.gateway.get_all()]
         self.assertIn("Premier League", league_names)
         self.assertIn("Championship", league_names)
+
+    def test_get_season_gets_season_for_league_start_and_end_year(self):
+        season = self.gateway.get_season("Premier League", 2014, 2015)
+        self.assertEquals("Premier League", season.league_name)
+        self.assertEquals(2014, season.start_year)
+        self.assertEquals(2015, season.end_year)
