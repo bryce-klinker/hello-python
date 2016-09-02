@@ -60,6 +60,10 @@ class ArabicToRomanConverterTest(unittest.TestCase):
     def test_negative_1_to_roman_raises_error(self):
         RomanNumeral.from_arabic(-1)
 
+    @raises(RuntimeError)
+    def test_0_to_roman_raises_error(self):
+        RomanNumeral.from_arabic(0)
+
     def assert_arabic_to_roman(self, arabic, roman):
         result = RomanNumeral.from_arabic(arabic)
         self.assertEquals(roman, result.roman)
