@@ -2,7 +2,7 @@ from os import listdir, path
 from itertools import groupby, islice
 
 from footy.src.leagues.league import League
-from footy.src.shared.csv_path import get_league_name
+from footy.src.shared.data_path import get_league_name
 
 
 class LeagueGateway:
@@ -22,4 +22,4 @@ class LeagueGateway:
 
     def get_season(self, league_name, start_year, end_year):
         league = self.get_league(league_name)
-        return [season for season in league.seasons if season.start_year == start_year and season.end_year == end_year][0]
+        return [season for season in league.seasons if season.start_year == int(start_year) and season.end_year == int(end_year)][0]

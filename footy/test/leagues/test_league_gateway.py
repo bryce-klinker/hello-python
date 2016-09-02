@@ -22,3 +22,8 @@ class LeagueGatewayTest(unittest.TestCase):
         self.assertEquals("Premier League", season.league_name)
         self.assertEquals(2014, season.start_year)
         self.assertEquals(2015, season.end_year)
+
+    def test_get_season_gets_season_for_league_string_start_year_and_string_end_year(self):
+        season = self.gateway.get_season("Premier League", "2014", "2015")
+        self.assertEquals(2014, season.start_year)
+        self.assertEquals(2015, season.end_year)

@@ -1,6 +1,5 @@
 from behave import *
 
-from footy.src.clubs.club_gateway import ClubGateway
 from footy.src.leagues.league_gateway import LeagueGateway
 from footy.test_data.test_data_paths import get_season_path, seasons_path
 
