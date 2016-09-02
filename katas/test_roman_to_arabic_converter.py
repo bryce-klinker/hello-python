@@ -48,12 +48,56 @@ class RomanToArabicConverterTest(unittest.TestCase):
         self.assert_roman_to_arabic("M", 1000)
 
     @raises(RuntimeError)
+    def test_IIII_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("IIII")
+
+    @raises(RuntimeError)
+    def test_XXXX_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("XXXX")
+
+    @raises(RuntimeError)
+    def test_CCCC_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("CCCC")
+
+    @raises(RuntimeError)
     def test_MMMM_to_arabic_raises_error(self):
         RomanNumeral.from_roman("MMMM")
 
     @raises(RuntimeError)
-    def test_IIII_to_arabic_raises_error(self):
-        RomanNumeral.from_roman("IIII")
+    def test_IVIV_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("IVIV")
+
+    @raises(RuntimeError)
+    def test_VV_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("VV")
+
+    @raises(RuntimeError)
+    def test_IXIX_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("IXIX")
+
+    @raises(RuntimeError)
+    def test_XLXL_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("XLXL")
+
+    @raises(RuntimeError)
+    def test_LL_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("LL")
+
+    @raises(RuntimeError)
+    def test_XCXC_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("XCXC")
+
+    @raises(RuntimeError)
+    def test_CDCD_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("CDCD")
+
+    @raises(RuntimeError)
+    def test_DD_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("DD")
+
+    @raises(RuntimeError)
+    def test_CMCM_to_arabic_raises_error(self):
+        RomanNumeral.from_roman("CMCM")
 
     def assert_roman_to_arabic(self, roman, arabic):
         result = RomanNumeral.from_roman(roman)

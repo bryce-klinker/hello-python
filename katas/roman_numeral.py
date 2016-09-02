@@ -86,5 +86,3 @@ class RomanNumeral:
             index += 1
 
         return roman_maps
-
-
