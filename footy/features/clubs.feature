@@ -29,3 +29,30 @@ Feature: Clubs
       | Crystal Palace |
       | Man City       |
       | Liverpool      |
+
+  Scenario: Get Premier League Clubs for 2014-2015 season
+    Given Premier League data for 2014-2015 season
+    When I get clubs in the Premier League for 2014-2015
+    Then I should have 20 clubs
+    Then I should have clubs
+      | club_name      |
+      | Arsenal        |
+      | Leicester      |
+      | Crystal Palace |
+      | Man United     |
+      | QPR            |
+      | Sunderland     |
+      | Stoke          |
+      | Liverpool      |
+      | West Ham       |
+      | Newcastle      |
+      | Burnley        |
+      | Aston Villa    |
+      | Chelsea        |
+      | Everton        |
+      | Southampton    |
+      | Swansea        |
+      | Hull           |
+      | Tottenham      |
+      | Man City       |
+      | West Brom      |
