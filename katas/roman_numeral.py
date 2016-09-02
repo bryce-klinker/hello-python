@@ -29,6 +29,9 @@ class RomanNumeral:
 
     @staticmethod
     def from_arabic(arabic):
+        if arabic < 0:
+            raise RuntimeError("The arabic value " + str(arabic) + " cannot be converted to roman")
+
         roman = RomanNumeral.convert_to_roman(arabic)
         return RomanNumeral(roman)
 
