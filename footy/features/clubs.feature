@@ -23,7 +23,7 @@ Feature: Clubs
       | Stoke          |
       | West Brom      |
       | Aston Villa    |
-      | Southhampton   |
+      | Southampton    |
       | Sunderland     |
       | West Ham       |
       | Crystal Palace |
