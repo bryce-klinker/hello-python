@@ -27,6 +27,10 @@ class RomanNumeral:
 
         return RomanNumeral.from_arabic(arabic_sum)
 
+    def minus(self, roman_numeral):
+        difference = self.arabic - roman_numeral.arabic
+        return RomanNumeral.from_arabic(difference)
+
     @staticmethod
     def from_arabic(arabic):
         if arabic < 1:
