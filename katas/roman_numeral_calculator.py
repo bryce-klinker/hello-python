@@ -1,4 +1,4 @@
-from roman_numeral import RomanNumeral
+from katas.roman_numeral import RomanNumeral
 
 
 class RomanNumeralCalculator(object):

@@ -1,6 +1,6 @@
 import unittest
 from nose.tools import *
-from roman_numeral_calculator import RomanNumeralCalculator
+from katas.roman_numeral_calculator import RomanNumeralCalculator
 
 
 class RomanNumeralCalculatorTest(unittest.TestCase):

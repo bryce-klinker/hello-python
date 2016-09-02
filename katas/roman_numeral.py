@@ -53,7 +53,7 @@ class RomanNumeral:
         roman = ""
         remainder = arabic
         while remainder > 0:
-            for key, roman_map in sorted(all_roman_maps.items(), key=lambda(k, v): all_roman_maps[k].arabic, reverse=True):
+            for key, roman_map in sorted(all_roman_maps.items(), key=lambda r_map: r_map[1].arabic, reverse=True):
                 if remainder >= roman_map.arabic:
                     remainder -= roman_map.arabic
                     roman += roman_map.symbol
