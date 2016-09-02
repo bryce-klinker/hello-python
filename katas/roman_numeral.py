@@ -53,25 +53,8 @@ class RomanNumeral:
 
     @staticmethod
     def convert_to_arabic(roman):
-        roman_to_arabic_map = RomanNumeral.get_maps()
-        value = 0
-        index = 0
-        length = len(roman)
-        while index < length:
-            first = roman[index]
-            second = ''
-            if index < length - 1:
-                second = roman[index + 1]
-
-            if first + second in roman_to_arabic_map.keys():
-                value += roman_to_arabic_map[first + second].arabic
-                index += 1
-            else:
-                value += roman_to_arabic_map[first].arabic
-
-            index += 1
-
-        return value
+        maps = RomanNumeral.get_maps_in_roman(roman)
+        return sum(roman_map.arabic for roman_map in maps)
 
     @staticmethod
     def convert_to_roman(arabic):
@@ -89,30 +72,39 @@ class RomanNumeral:
 
     @staticmethod
     def is_valid_roman(roman):
-        roman_maps = RomanNumeral.get_maps()
+        maps = RomanNumeral.get_maps_in_roman(roman)
         counts = {}
-        length = len(roman)
-        for (i, c) in enumerate(roman):
-            first = c
-            second = ""
-            if i < length - 1:
-                second += roman[i + 1]
+        for roman_map in maps:
+            if roman_map.symbol not in counts:
+                counts[roman_map.symbol] = 0
 
-            if first + second in roman_maps:
-                if first + second not in counts:
-                    counts[first + second] = 0
+            counts[roman_map.symbol] += 1
 
-                counts[first + second] += 1
-
-                if counts[first + second] > roman_maps[first + second].max:
-                    return False
-            else:
-                if first not in counts:
-                    counts[first] = 0
-
-                counts[first] += 1
-
-                if counts[first] > roman_maps[first].max:
-                    return False
+            if roman_map.max < counts[roman_map.symbol]:
+                return False
 
         return True
+
+    @staticmethod
+    def get_maps_in_roman(roman):
+        roman_to_arabic_map = RomanNumeral.get_maps()
+        maps = []
+        index = 0
+        length = len(roman)
+        while index < length:
+            first = roman[index]
+            second = ''
+            if index < length - 1:
+                second = roman[index + 1]
+
+            if first + second in roman_to_arabic_map.keys():
+                maps.append(roman_to_arabic_map[first + second])
+                index += 1
+            else:
+                maps.append(roman_to_arabic_map[first])
+
+            index += 1
+
+        return maps;
+
+
