@@ -64,7 +64,7 @@ class RomanNumeralCalculatorTest(unittest.TestCase):
     def test_X_minus_I_equals_IX(self):
         self.assert_minus_equals("X", "I", "IX")
 
-    def test_X_minus_I_equals_IX(self):
+    def test_C_minus_I_equals_XCIX(self):
         self.assert_minus_equals("C", "I", "XCIX")
 
     @raises(RuntimeError)
